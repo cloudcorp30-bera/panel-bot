@@ -1,14 +1,14 @@
 {
   "name": "telegram-panel-bot",
   "version": "1.0.0",
-  "description": "Telegram bot to manage Pterodactyl panel",
+  "description": "Telegram bot to create users and servers on your panel",
   "main": "bot.js",
   "scripts": {
     "start": "node bot.js"
   },
   "dependencies": {
+    "express": "^4.18.2",
     "node-fetch": "^2.6.1",
     "node-telegram-bot-api": "^0.61.0"
-  },
-  "type": "commonjs"
+  }
 }
