@@ -7,7 +7,10 @@ module.exports = function menuCommand(bot) {
 👤 *User Management*
 /createuser username,email — Create a panel user
 /cadminpanel username,email — Create an admin user
+/userinfo username — Full details on a user
+/resetpassword username newpass — Reset a user's password
 /listusers — List all panel users
+/listpaneladmins — List all panel admins
 /deluser username — Delete a user
 
 🖥️ *Server Management*
@@ -16,13 +19,22 @@ module.exports = function menuCommand(bot) {
 /2gb username,telegramID — Create user + 2GB server
 /unli username,telegramID — Create user + unlimited server
 /listservers — List all servers
-/delserver name — Delete a server
+/renameserver id newname — Rename a server
+/editlimits id ram cpu disk — Edit resource limits
+/suspendserver id — Suspend a server
+/unsuspendserver id — Unsuspend a server
+/reinstallserver id — Reinstall a server
+/delserver id — Delete a server
 
-👑 *Admin*
-/listpaneladmins — List all panel admins
+🌐 *Node & Allocation Info*
+/listnodes — List all Wings nodes
+/listallocations — Show free/used IPs per node
 
-📊 *Status*
-/start — Bot & VPS status
+📊 *Panel Stats*
+/stats — Total users, servers, nodes summary
+
+📈 *Status*
+/start — Bot & VPS status with ping
 `;
         bot.sendMessage(chatId, text, { parse_mode: 'Markdown' });
     });
