@@ -1,15 +1,25 @@
 const TelegramBot = require('node-telegram-bot-api');
-const createServerCommand = require('./commands/createServer');
-const menuCommand = require('./commands/menu');
-const listUsersCommand = require('./commands/listUsers');
-const listServersCommand = require('./commands/listServers');
-const delUserCommand = require('./commands/delUser');
-const delServerCommand = require('./commands/delServer');
-const statusMenuCommand = require('./commands/start');
-const cadminPanelCommand = require('./commands/cadminpanel');
+const createServerCommand    = require('./commands/createServer');
+const menuCommand            = require('./commands/menu');
+const listUsersCommand       = require('./commands/listUsers');
+const listServersCommand     = require('./commands/listServers');
+const delUserCommand         = require('./commands/delUser');
+const delServerCommand       = require('./commands/delServer');
+const statusMenuCommand      = require('./commands/start');
+const cadminPanelCommand     = require('./commands/cadminpanel');
 const listPanelAdminsCommand = require('./commands/listpaneladmins');
-const createUserCommand = require('./commands/createuser');
-const addServerCommand = require('./commands/addserver');
+const createUserCommand      = require('./commands/createuser');
+const addServerCommand       = require('./commands/addserver');
+const suspendServerCommand   = require('./commands/suspendserver');
+const unsuspendServerCommand = require('./commands/unsuspendserver');
+const reinstallServerCommand = require('./commands/reinstallserver');
+const renameServerCommand    = require('./commands/renameserver');
+const editLimitsCommand      = require('./commands/editlimits');
+const userInfoCommand        = require('./commands/userinfo');
+const resetPasswordCommand   = require('./commands/resetpassword');
+const statsCommand           = require('./commands/stats');
+const listNodesCommand       = require('./commands/listnodes');
+const listAllocationsCommand = require('./commands/listallocations');
 
 const { TELEGRAM_TOKEN, AUTHORIZED_ADMINS } = require('./config');
 
@@ -26,6 +36,16 @@ cadminPanelCommand(bot, AUTHORIZED_ADMINS);
 listPanelAdminsCommand(bot, AUTHORIZED_ADMINS);
 createUserCommand(bot, AUTHORIZED_ADMINS);
 addServerCommand(bot, AUTHORIZED_ADMINS);
+suspendServerCommand(bot, AUTHORIZED_ADMINS);
+unsuspendServerCommand(bot, AUTHORIZED_ADMINS);
+reinstallServerCommand(bot, AUTHORIZED_ADMINS);
+renameServerCommand(bot, AUTHORIZED_ADMINS);
+editLimitsCommand(bot, AUTHORIZED_ADMINS);
+userInfoCommand(bot, AUTHORIZED_ADMINS);
+resetPasswordCommand(bot, AUTHORIZED_ADMINS);
+statsCommand(bot, AUTHORIZED_ADMINS);
+listNodesCommand(bot, AUTHORIZED_ADMINS);
+listAllocationsCommand(bot, AUTHORIZED_ADMINS);
 
 bot.getMe().then((me) => {
     console.log(`✅ Telegram bot @${me.username} is running...`);
